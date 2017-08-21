@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    (function() {
+      var xhr;
+
+      if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+      } else {
+        xhr = ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xhr.open('get', 'data.json', 'true');
+      xhr.send();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            console.log(11111111111111)
+          }
+        }
+      }
+    })()
+
+
+    // jq=====>ajax
+    $.ajax({  
+      url: "ajax.php", //请求的页面地址
+        type: 'post', //请求数据的方式 get post
+        dataType: 'text', //数据返回的方式
+        success: function(data) {           //请求之后，响应成功执行
+                 
+        alert(data);     
+      },
+         error: function() {          //请求之后，响应不成功
+                 
+        alert("失败");      
+      } 
+    });
+  </script>
+</body>
+
+</html>
